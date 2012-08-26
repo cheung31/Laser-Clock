@@ -1,0 +1,270 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1CAA159515EA05B000DD673A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CAA159415EA05B000DD673A /* UIKit.framework */; };
+		1CAA159715EA05B000DD673A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CAA159615EA05B000DD673A /* Foundation.framework */; };
+		1CAA159915EA05B000DD673A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CAA159815EA05B000DD673A /* CoreGraphics.framework */; };
+		1CAA159F15EA05B000DD673A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CAA159D15EA05B000DD673A /* InfoPlist.strings */; };
+		1CAA15A115EA05B000DD673A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CAA15A015EA05B000DD673A /* main.m */; };
+		1CAA15A515EA05B100DD673A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CAA15A415EA05B100DD673A /* AppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1CAA159015EA05B000DD673A /* LaserLights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaserLights.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CAA159415EA05B000DD673A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1CAA159615EA05B000DD673A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1CAA159815EA05B000DD673A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1CAA159C15EA05B000DD673A /* LaserLights-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LaserLights-Info.plist"; sourceTree = "<group>"; };
+		1CAA159E15EA05B000DD673A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1CAA15A015EA05B000DD673A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1CAA15A215EA05B100DD673A /* LaserLights-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LaserLights-Prefix.pch"; sourceTree = "<group>"; };
+		1CAA15A315EA05B100DD673A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1CAA15A415EA05B100DD673A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1CAA158D15EA05B000DD673A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CAA159515EA05B000DD673A /* UIKit.framework in Frameworks */,
+				1CAA159715EA05B000DD673A /* Foundation.framework in Frameworks */,
+				1CAA159915EA05B000DD673A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1CAA158515EA05B000DD673A = {
+			isa = PBXGroup;
+			children = (
+				1CAA159A15EA05B000DD673A /* LaserLights */,
+				1CAA159315EA05B000DD673A /* Frameworks */,
+				1CAA159115EA05B000DD673A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1CAA159115EA05B000DD673A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1CAA159015EA05B000DD673A /* LaserLights.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1CAA159315EA05B000DD673A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1CAA159415EA05B000DD673A /* UIKit.framework */,
+				1CAA159615EA05B000DD673A /* Foundation.framework */,
+				1CAA159815EA05B000DD673A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1CAA159A15EA05B000DD673A /* LaserLights */ = {
+			isa = PBXGroup;
+			children = (
+				1CAA15A315EA05B100DD673A /* AppDelegate.h */,
+				1CAA15A415EA05B100DD673A /* AppDelegate.m */,
+				1CAA159B15EA05B000DD673A /* Supporting Files */,
+			);
+			path = LaserLights;
+			sourceTree = "<group>";
+		};
+		1CAA159B15EA05B000DD673A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1CAA159C15EA05B000DD673A /* LaserLights-Info.plist */,
+				1CAA159D15EA05B000DD673A /* InfoPlist.strings */,
+				1CAA15A015EA05B000DD673A /* main.m */,
+				1CAA15A215EA05B100DD673A /* LaserLights-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1CAA158F15EA05B000DD673A /* LaserLights */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CAA15A815EA05B100DD673A /* Build configuration list for PBXNativeTarget "LaserLights" */;
+			buildPhases = (
+				1CAA158C15EA05B000DD673A /* Sources */,
+				1CAA158D15EA05B000DD673A /* Frameworks */,
+				1CAA158E15EA05B000DD673A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LaserLights;
+			productName = LaserLights;
+			productReference = 1CAA159015EA05B000DD673A /* LaserLights.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1CAA158715EA05B000DD673A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "JJ Weber";
+			};
+			buildConfigurationList = 1CAA158A15EA05B000DD673A /* Build configuration list for PBXProject "LaserLights" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1CAA158515EA05B000DD673A;
+			productRefGroup = 1CAA159115EA05B000DD673A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1CAA158F15EA05B000DD673A /* LaserLights */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1CAA158E15EA05B000DD673A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CAA159F15EA05B000DD673A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1CAA158C15EA05B000DD673A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CAA15A115EA05B000DD673A /* main.m in Sources */,
+				1CAA15A515EA05B100DD673A /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1CAA159D15EA05B000DD673A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1CAA159E15EA05B000DD673A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1CAA15A615EA05B100DD673A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1CAA15A715EA05B100DD673A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1CAA15A915EA05B100DD673A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LaserLights/LaserLights-Prefix.pch";
+				INFOPLIST_FILE = "LaserLights/LaserLights-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1CAA15AA15EA05B100DD673A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LaserLights/LaserLights-Prefix.pch";
+				INFOPLIST_FILE = "LaserLights/LaserLights-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1CAA158A15EA05B000DD673A /* Build configuration list for PBXProject "LaserLights" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CAA15A615EA05B100DD673A /* Debug */,
+				1CAA15A715EA05B100DD673A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1CAA15A815EA05B100DD673A /* Build configuration list for PBXNativeTarget "LaserLights" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CAA15A915EA05B100DD673A /* Debug */,
+				1CAA15AA15EA05B100DD673A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1CAA158715EA05B000DD673A /* Project object */;
+}
