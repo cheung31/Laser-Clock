@@ -7,11 +7,13 @@
 @synthesize view;
 @synthesize size;
 
-//make the layer
-+(LaserLine* ) createTrailingLineAtAngle:(double)angle InLayer:(CALayer *)superlayer WithSize:(double)size {
+//make the line + layer
++(LaserLine* ) createTrailingLineAtAngle:(double)angle InLayer:(CALayer *)superlayer WithSize:(double)size WithHue:(double)hue WithBrightness:(double)brightness {
     LaserLine* ll = [LaserLine new];
     ll.layer = [CALayer new];
     ll.size = size;
+    ll.hue = hue;
+    ll.brightness = brightness;
     ll.layer.anchorPoint = CGPointMake(0.5, 1);
     ll.layer.bounds = CGRectMake(0, 0, 20, superlayer.bounds.size.height);
     ll.layer.backgroundColor = CGColorCreateCopyWithAlpha([[UIColor redColor] CGColor], 0);
@@ -30,19 +32,15 @@
     CGContextMoveToPoint(ctx, (self.layer.bounds.size.width / 2), 5 * size + 10);
     CGContextAddLineToPoint(ctx, (self.layer.bounds.size.width / 2), 10);
     
-    CGContextSetStrokeColorWithColor(ctx, [[self randomRedishColor] CGColor]);
+    CGContextSetStrokeColorWithColor(ctx, [[self shiftingColor] CGColor]);
     CGContextStrokePath(ctx);
 
 }
 
 
--(CGFloat)randomIntensity {
-    float half = (double) arc4random() / 2;
-    return (double) (arc4random() / UINT_MAX) + half;
-}
-
--(UIColor*)randomRedishColor {
-    return [UIColor colorWithHue:0.7 saturation:0.5 brightness:[self randomIntensity] alpha:1];
+//0.7 for purplish hue
+-(UIColor*)shiftingColor {
+    return [UIColor colorWithHue:self.hue saturation:0.5 brightness:self.brightness alpha:1];
 }
 
 
