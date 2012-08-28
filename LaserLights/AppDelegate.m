@@ -1,12 +1,5 @@
-//
-//  AppDelegate.m
-//  LaserLights
-//
-//  Created by JJ Weber on 8/26/12.
-//  Copyright (c) 2012 JJ Weber. All rights reserved.
-//
-
 #import "AppDelegate.h"
+#import "LightsView.h"
 
 @implementation AppDelegate
 
@@ -14,7 +7,9 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor blackColor];
+    self.window.rootViewController = [UIViewController new];
+    self.window.rootViewController.view = [[LightsView alloc] initWithFrame:self.window.bounds];
     [self.window makeKeyAndVisible];
     return YES;
 }
