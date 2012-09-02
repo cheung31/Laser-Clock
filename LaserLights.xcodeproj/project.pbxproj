@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CA12B1E15F35F86008352C0 /* LightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA12B1D15F35F86008352C0 /* LightsViewController.m */; };
 		1CAA159515EA05B000DD673A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CAA159415EA05B000DD673A /* UIKit.framework */; };
 		1CAA159715EA05B000DD673A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CAA159615EA05B000DD673A /* Foundation.framework */; };
 		1CAA159915EA05B000DD673A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CAA159815EA05B000DD673A /* CoreGraphics.framework */; };
@@ -16,10 +17,13 @@
 		1CAA15AD15EB1CE700DD673A /* LightsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CAA15AC15EB1CE700DD673A /* LightsView.m */; };
 		1CAA15B015EB1D2800DD673A /* LaserLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CAA15AF15EB1D2800DD673A /* LaserLine.m */; };
 		1CAA15B215EB1E9900DD673A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CAA15B115EB1E9900DD673A /* QuartzCore.framework */; };
-		1CE6A1F415EC23CD00141DC8 /* LaserHand.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE6A1F315EC23CD00141DC8 /* LaserHand.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1CA12B1515F35EEC008352C0 /* LaserHand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaserHand.h; sourceTree = "<group>"; };
+		1CA12B1615F35EEC008352C0 /* LaserHand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaserHand.m; sourceTree = "<group>"; };
+		1CA12B1C15F35F86008352C0 /* LightsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightsViewController.h; sourceTree = "<group>"; };
+		1CA12B1D15F35F86008352C0 /* LightsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightsViewController.m; sourceTree = "<group>"; };
 		1CAA159015EA05B000DD673A /* LaserLights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaserLights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CAA159415EA05B000DD673A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1CAA159615EA05B000DD673A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -35,8 +39,6 @@
 		1CAA15AE15EB1D2800DD673A /* LaserLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaserLine.h; sourceTree = "<group>"; };
 		1CAA15AF15EB1D2800DD673A /* LaserLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaserLine.m; sourceTree = "<group>"; };
 		1CAA15B115EB1E9900DD673A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		1CE6A1F215EC23CD00141DC8 /* LaserHand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LaserHand.h; path = ../LaserHand.h; sourceTree = "<group>"; };
-		1CE6A1F315EC23CD00141DC8 /* LaserHand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LaserHand.m; path = ../LaserHand.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,10 +56,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CA12B2015F35F95008352C0 /* V/C */ = {
+			isa = PBXGroup;
+			children = (
+				1CAA15AB15EB1CE600DD673A /* LightsView.h */,
+				1CAA15AC15EB1CE700DD673A /* LightsView.m */,
+				1CA12B1C15F35F86008352C0 /* LightsViewController.h */,
+				1CA12B1D15F35F86008352C0 /* LightsViewController.m */,
+			);
+			name = V/C;
+			sourceTree = "<group>";
+		};
+		1CA12B2115F35FD4008352C0 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				1CAA15AE15EB1D2800DD673A /* LaserLine.h */,
+				1CAA15AF15EB1D2800DD673A /* LaserLine.m */,
+				1CA12B1515F35EEC008352C0 /* LaserHand.h */,
+				1CA12B1615F35EEC008352C0 /* LaserHand.m */,
+			);
+			name = M;
+			sourceTree = "<group>";
+		};
 		1CAA158515EA05B000DD673A = {
 			isa = PBXGroup;
 			children = (
-				1CAA159A15EA05B000DD673A /* LaserLights */,
+				1CAA159A15EA05B000DD673A /* LaserClock */,
 				1CAA159315EA05B000DD673A /* Frameworks */,
 				1CAA159115EA05B000DD673A /* Products */,
 			);
@@ -82,19 +106,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1CAA159A15EA05B000DD673A /* LaserLights */ = {
+		1CAA159A15EA05B000DD673A /* LaserClock */ = {
 			isa = PBXGroup;
 			children = (
 				1CAA15A315EA05B100DD673A /* AppDelegate.h */,
 				1CAA15A415EA05B100DD673A /* AppDelegate.m */,
-				1CAA15AB15EB1CE600DD673A /* LightsView.h */,
-				1CAA15AC15EB1CE700DD673A /* LightsView.m */,
-				1CAA15AE15EB1D2800DD673A /* LaserLine.h */,
-				1CAA15AF15EB1D2800DD673A /* LaserLine.m */,
-				1CE6A1F215EC23CD00141DC8 /* LaserHand.h */,
-				1CE6A1F315EC23CD00141DC8 /* LaserHand.m */,
+				1CA12B2115F35FD4008352C0 /* M */,
+				1CA12B2015F35F95008352C0 /* V/C */,
 				1CAA159B15EA05B000DD673A /* Supporting Files */,
 			);
+			name = LaserClock;
 			path = LaserLights;
 			sourceTree = "<group>";
 		};
@@ -175,7 +196,7 @@
 				1CAA15A515EA05B100DD673A /* AppDelegate.m in Sources */,
 				1CAA15AD15EB1CE700DD673A /* LightsView.m in Sources */,
 				1CAA15B015EB1D2800DD673A /* LaserLine.m in Sources */,
-				1CE6A1F415EC23CD00141DC8 /* LaserHand.m in Sources */,
+				1CA12B1E15F35F86008352C0 /* LightsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

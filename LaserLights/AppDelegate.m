@@ -1,5 +1,6 @@
 #import "AppDelegate.h"
 #import "LightsView.h"
+#import "LightsViewController.h"
 
 @implementation AppDelegate
 
@@ -9,7 +10,7 @@
     // Override point for customization after application launch.
     [UIApplication sharedApplication].statusBarHidden = YES;
     self.window.backgroundColor = [UIColor blackColor];
-    self.window.rootViewController = [UIViewController new];
+    self.window.rootViewController = [LightsViewController new];
     self.window.rootViewController.view = [[LightsView alloc] initWithFrame:self.window.bounds];
     [self.window makeKeyAndVisible];
     return YES;
