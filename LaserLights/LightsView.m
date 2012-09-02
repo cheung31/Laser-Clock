@@ -87,8 +87,7 @@
     [self.hoursHand rotateHandWithTiming:86400 FromAngle:hoursAngle];
 }
 
-//trails diminish in size and birghtness as time passes until a cycle has transpired
-//seconds
+//synch with other hands
 -(void) addTrail {
     [self.secondsHand addTrailForInterval:(60) WithNoonBlock:^{
         [self.minutesHand addTrailForInterval:(60) WithNoonBlock:^{
