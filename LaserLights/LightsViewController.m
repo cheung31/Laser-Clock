@@ -1,5 +1,7 @@
 
 #import "LightsViewController.h"
+#import "LightsView.h"
+#import "LaserHand.h"
 
 @interface LightsViewController ()
 
@@ -16,10 +18,13 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [((LightsView*)self.view) updateTime];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [((LightsView*)self.view) updateTime];
 }
 
 - (void)viewDidUnload

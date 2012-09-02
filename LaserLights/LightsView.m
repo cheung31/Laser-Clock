@@ -4,11 +4,6 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface LightsView ()
-//clock elements
-@property double halfScreen;
-@property (strong, nonatomic) LaserHand* secondsHand;
-@property (strong, nonatomic) LaserHand* minutesHand;
-@property (strong, nonatomic) LaserHand* hoursHand;
 @end
 
 @implementation LightsView
@@ -17,34 +12,35 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        //set the general size equal to smaller bound of the view
-        if (self.bounds.size.width > self.bounds.size.height) {
-            self.halfScreen = (self.bounds.size.height / 2);
-        } else {
-            self.halfScreen = (self.bounds.size.width / 2);
-        }
-        //make seconds hand
-        self.secondsHand = [LaserHand createLaserHandInCenterOfView:self
-                                                WithPortionOfScreen:self.halfScreen * 0.6
-                                                       WithLineSize:self.halfScreen/10
-                                                        WithLineHue:0.7];
-        //make minutes hand
-        self.minutesHand = [LaserHand createLaserHandInCenterOfView:self
-                                                WithPortionOfScreen:self.halfScreen * 0.88
-                                                       WithLineSize:self.halfScreen/20
-                                                        WithLineHue:0.6];
-        //make hours hand
-        self.hoursHand = [LaserHand createLaserHandInCenterOfView:self
-                                              WithPortionOfScreen:self.halfScreen
-                                                     WithLineSize:self.halfScreen/50
-                                                      WithLineHue:0.5];
-        
-        //synch to current time with milisecond accuracy to system clock
-        [self updateTime];
+        [self makeClock];
     }
     return self;
 }
--(void) updateTime {
+
+-(void)makeClock {
+    if (self.bounds.size.width > self.bounds.size.height) {
+        self.halfScreen = (self.bounds.size.height / 2);
+    } else {
+        self.halfScreen = (self.bounds.size.width / 2);
+    }
+    //make seconds hand
+    self.secondsHand = [LaserHand createLaserHandInCenterOfView:self
+                                            WithPortionOfScreen:self.halfScreen * 0.6
+                                                   WithLineSize:self.halfScreen/10
+                                                    WithLineHue:0.7];
+    //make minutes hand
+    self.minutesHand = [LaserHand createLaserHandInCenterOfView:self
+                                            WithPortionOfScreen:self.halfScreen * 0.88
+                                                   WithLineSize:self.halfScreen/20
+                                                    WithLineHue:0.6];
+    //make hours hand
+    self.hoursHand = [LaserHand createLaserHandInCenterOfView:self
+                                          WithPortionOfScreen:self.halfScreen
+                                                 WithLineSize:self.halfScreen/50
+                                                  WithLineHue:0.5];
+}
+
+-(void)updateTime {
     //get current time
     unsigned unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit |  NSSecondCalendarUnit;
     NSCalendar *gregorian = [[NSCalendar alloc]

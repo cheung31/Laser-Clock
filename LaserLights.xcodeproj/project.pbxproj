@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C24FBAB15F3E4A400F3FEED /* LaserHand.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA12B1615F35EEC008352C0 /* LaserHand.m */; };
 		1CA12B1E15F35F86008352C0 /* LightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA12B1D15F35F86008352C0 /* LightsViewController.m */; };
 		1CAA159515EA05B000DD673A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CAA159415EA05B000DD673A /* UIKit.framework */; };
 		1CAA159715EA05B000DD673A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CAA159615EA05B000DD673A /* Foundation.framework */; };
@@ -197,6 +198,7 @@
 				1CAA15AD15EB1CE700DD673A /* LightsView.m in Sources */,
 				1CAA15B015EB1D2800DD673A /* LaserLine.m in Sources */,
 				1CA12B1E15F35F86008352C0 /* LightsViewController.m in Sources */,
+				1C24FBAB15F3E4A400F3FEED /* LaserHand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
