@@ -12,7 +12,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self makeClock];
+        //[self makeClock];
     }
     return self;
 }

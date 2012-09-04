@@ -20,11 +20,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [((LightsView*)self.view) updateTime];
+
 }
 
 -(void)viewDidAppear:(BOOL)animated {
-    [((LightsView*)self.view) updateTime];
+
 }
 
 - (void)viewDidUnload
@@ -36,6 +36,11 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
+}
+
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    //[((LightsView*)self.view) makeClock];
+    //[((LightsView*)self.view) updateTime];
 }
 
 @end

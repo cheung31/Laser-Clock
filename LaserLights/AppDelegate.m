@@ -16,4 +16,10 @@
     return YES;
 }
 
+-(void)applicationDidBecomeActive:(UIApplication *)application {   
+    self.window.rootViewController.view = [[LightsView alloc] initWithFrame:self.window.bounds];
+    [((LightsView*)self.window.rootViewController.view) makeClock];
+    [((LightsView*)self.window.rootViewController.view) updateTime];
+}
+
 @end
