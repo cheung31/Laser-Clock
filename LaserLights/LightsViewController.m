@@ -38,9 +38,8 @@
     return YES;
 }
 
--(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    //[((LightsView*)self.view) makeClock];
-    //[((LightsView*)self.view) updateTime];
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    [((LightsView*)self.view) setNeedsDisplay];
 }
 
 @end

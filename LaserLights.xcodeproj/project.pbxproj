@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C24FBAB15F3E4A400F3FEED /* LaserHand.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA12B1615F35EEC008352C0 /* LaserHand.m */; };
+		1C4938FD15F67347004EFC53 /* LightsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C4938FC15F67347004EFC53 /* LightsView.xib */; };
 		1CA12B1E15F35F86008352C0 /* LightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA12B1D15F35F86008352C0 /* LightsViewController.m */; };
 		1CAA159515EA05B000DD673A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CAA159415EA05B000DD673A /* UIKit.framework */; };
 		1CAA159715EA05B000DD673A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CAA159615EA05B000DD673A /* Foundation.framework */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C4938FC15F67347004EFC53 /* LightsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LightsView.xib; sourceTree = "<group>"; };
 		1CA12B1515F35EEC008352C0 /* LaserHand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaserHand.h; sourceTree = "<group>"; };
 		1CA12B1615F35EEC008352C0 /* LaserHand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaserHand.m; sourceTree = "<group>"; };
 		1CA12B1C15F35F86008352C0 /* LightsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightsViewController.h; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			children = (
 				1CAA15AB15EB1CE600DD673A /* LightsView.h */,
 				1CAA15AC15EB1CE700DD673A /* LightsView.m */,
+				1C4938FC15F67347004EFC53 /* LightsView.xib */,
 				1CA12B1C15F35F86008352C0 /* LightsViewController.h */,
 				1CA12B1D15F35F86008352C0 /* LightsViewController.m */,
 			);
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CAA159F15EA05B000DD673A /* InfoPlist.strings in Resources */,
+				1C4938FD15F67347004EFC53 /* LightsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

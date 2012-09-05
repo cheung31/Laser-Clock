@@ -11,7 +11,7 @@
     [UIApplication sharedApplication].statusBarHidden = YES;
     self.window.backgroundColor = [UIColor blackColor];
     self.window.rootViewController = [LightsViewController new];
-    self.window.rootViewController.view = [[LightsView alloc] initWithFrame:self.window.bounds];
+    //self.window.rootViewController.view = [[LightsView alloc] initWithFrame:self.window.bounds];
     [self.window makeKeyAndVisible];
     return YES;
 }
