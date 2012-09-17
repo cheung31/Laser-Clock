@@ -40,7 +40,7 @@
 
 //0.7 for purplish hue
 - (UIColor*)shiftingColor {
-    return [UIColor colorWithHue:self.hue saturation:0.5 brightness:self.brightness alpha:1];
+    return [UIColor colorWithHue:self.hue saturation:0.7 brightness:self.brightness alpha:1];
 }
 
 
