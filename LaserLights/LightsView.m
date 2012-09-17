@@ -1,9 +1,18 @@
 #import "LightsView.h"
 #import "LaserLine.h"
 #import "LaserHand.h"
+#import "ClockLayer.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface LightsView ()
+//timer
+@property (strong, nonatomic) NSTimer* timer;
+//clock elements
+@property double halfScreen;
+@property (strong, nonatomic) LaserHand* secondsHand;
+@property (strong, nonatomic) LaserHand* minutesHand;
+@property (strong, nonatomic) LaserHand* hoursHand;
+@property (strong, nonatomic) CALayer* layer;
 @end
 
 @implementation LightsView
@@ -17,30 +26,39 @@
     return self;
 }
 
--(void)makeClock {
++ (Class)layerClass {
+    return [ClockLayer class];
+}
+
+- (void)makeClock {
+
     if (self.bounds.size.width > self.bounds.size.height) {
         self.halfScreen = (self.bounds.size.height / 2);
     } else {
         self.halfScreen = (self.bounds.size.width / 2);
     }
     //make seconds hand
-    self.secondsHand = [LaserHand createLaserHandInCenterOfView:self
-                                            WithPortionOfScreen:self.halfScreen * 0.6
+    self.secondsHand = [LaserHand createLaserHandInCenterOfLayer:self.layer
+                                            WithPortionOfScreen:self.halfScreen * 0.55
                                                    WithLineSize:self.halfScreen/10
                                                     WithLineHue:0.7];
     //make minutes hand
-    self.minutesHand = [LaserHand createLaserHandInCenterOfView:self
-                                            WithPortionOfScreen:self.halfScreen * 0.88
+    self.minutesHand = [LaserHand createLaserHandInCenterOfLayer:self.layer
+                                            WithPortionOfScreen:self.halfScreen * 0.85
                                                    WithLineSize:self.halfScreen/20
                                                     WithLineHue:0.6];
     //make hours hand
-    self.hoursHand = [LaserHand createLaserHandInCenterOfView:self
+    self.hoursHand = [LaserHand createLaserHandInCenterOfLayer:self.layer
                                           WithPortionOfScreen:self.halfScreen
                                                  WithLineSize:self.halfScreen/50
                                                   WithLineHue:0.5];
 }
 
--(void)updateTime {
+- (void)setNeedsLayout {
+    
+}
+
+- (void)updateTime {
     //get current time
     unsigned unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit |  NSSecondCalendarUnit;
     NSCalendar *gregorian = [[NSCalendar alloc]
@@ -61,8 +79,8 @@
         [self.secondsHand addTrailForInterval:(60) WithNoonBlock:nil];
     }
     [self.secondsHand rotateHandWithTiming:60 FromAngle:secondsAngle];
-    NSTimer* secondsSynch = [[NSTimer alloc] initWithFireDate:[now dateByAddingTimeInterval:(milliseconds)] interval:(1) target:self selector:@selector(addTrail) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer:secondsSynch forMode:NSDefaultRunLoopMode];
+    self.timer = [[NSTimer alloc] initWithFireDate:[now dateByAddingTimeInterval:(milliseconds)] interval:(1) target:self selector:@selector(addTrail) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
     
     //fast forward to current minute
     NSLog(@"minutes %f", minutes);

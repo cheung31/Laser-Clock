@@ -2,6 +2,7 @@
 #import "LightsViewController.h"
 #import "LightsView.h"
 #import "LaserHand.h"
+#import "ClockLayer.h"
 
 @interface LightsViewController ()
 
@@ -18,12 +19,14 @@
     return self;
 }
 
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
 }
 
--(void)viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
 
 }
 
@@ -33,13 +36,8 @@
     // Release any retained subviews of the main view.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return YES;
-}
-
--(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-    [((LightsView*)self.view) setNeedsDisplay];
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return NO;
 }
 
 @end

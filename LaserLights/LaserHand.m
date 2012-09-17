@@ -3,16 +3,24 @@
 #import "LaserLine.h"
 #import <QuartzCore/QuartzCore.h>
 
+@interface LaserHand ()
+@property double lineAngle;
+@property double lineBounds;
+@property double lineSize;
+@property double lineHue;
+@property double lineBrightness;
+@end
+
 @implementation LaserHand
-@synthesize layer;
-+(LaserHand* ) createLaserHandInCenterOfView:(UIView *)view WithPortionOfScreen:(double)portion WithLineSize:(double)size WithLineHue:(double)hue {
+
++ (LaserHand*)createLaserHandInCenterOfLayer:(CALayer *)layer WithPortionOfScreen:(double)portion WithLineSize:(double)size WithLineHue:(double)hue {
     //make the hand
     LaserHand* lh = [LaserHand new];
     lh.layer = [CALayer new];
     lh.layer.anchorPoint = CGPointMake(0.5, 1);
-    lh.layer.bounds = CGRectMake(0, 0, 400, portion);
+    lh.layer.bounds = CGRectMake(0, 0, 0, portion);
     lh.layer.backgroundColor = CGColorCreateCopyWithAlpha([[UIColor whiteColor] CGColor], 0);
-    lh.layer.position = view.center;
+    lh.layer.position = CGPointMake(layer.frame.size.width / 2.,layer.frame.size.height / 2.);
     lh.layer.delegate = lh;
     lh.lineAngle = 0;
     lh.lineTrails =[NSMutableArray new];
@@ -23,11 +31,11 @@
     lh.lineSize = size;
     //add to superlayer
     [lh.layer setNeedsDisplay];
-    [view.layer addSublayer:(lh.layer)];
+    [layer addSublayer:(lh.layer)];
     return lh;
 }
 
--(void) addTrailForInterval:(double)interval WithNoonBlock:(void (^)(void))tick {
+- (void)addTrailForInterval:(double)interval WithNoonBlock:(void (^)(void))tick {
     self.lineAngle = self.lineAngle - ((2 * M_PI)/interval);
     if (self.lineAngle > ((-2 * M_PI) + 2 * M_PI/120)) {
         self.lineSize -= self.lineBounds/interval;
@@ -50,7 +58,7 @@
 }
 
 //rotate for INFINITY counts
--(void) rotateHandWithTiming:(double)seconds FromAngle:(double)angle {
+- (void)rotateHandWithTiming:(double)seconds FromAngle:(double)angle {
     CABasicAnimation* animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     animation.fromValue = [NSNumber numberWithFloat:angle];
     animation.toValue = [NSNumber numberWithFloat: angle + 2*M_PI];
