@@ -54,9 +54,10 @@
                                                   WithLineHue:0.5];
 }
 
-- (void)setNeedsLayout {
-    
+- (void)setClockCenter:(CGPoint) center {
+    self.layer.position = center;
 }
+
 
 - (void)updateTime {
     //get current time

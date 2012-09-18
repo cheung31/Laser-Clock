@@ -5,4 +5,5 @@
 -(void)updateTime;
 -(void)makeClock;
 - (void)reDrawClock;
+- (void)setClockCenter:(CGPoint) center;
 @end
