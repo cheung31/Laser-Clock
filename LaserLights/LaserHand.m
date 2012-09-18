@@ -13,14 +13,14 @@
 
 @implementation LaserHand
 
-+ (LaserHand*)createLaserHandInCenterOfLayer:(CALayer *)layer WithPortionOfScreen:(double)portion WithLineSize:(double)size WithLineHue:(double)hue {
++ (LaserHand*)createLaserHandInCenterOfView:(UIView *)view WithPortionOfScreen:(double)portion WithLineSize:(double)size WithLineHue:(double)hue {
     //make the hand
     LaserHand* lh = [LaserHand new];
     lh.layer = [CALayer new];
     lh.layer.anchorPoint = CGPointMake(0.5, 1);
     lh.layer.bounds = CGRectMake(0, 0, 0, portion);
     lh.layer.backgroundColor = CGColorCreateCopyWithAlpha([[UIColor whiteColor] CGColor], 0);
-    lh.layer.position = CGPointMake(layer.frame.size.width / 2.,layer.frame.size.height / 2.);
+    lh.layer.position = CGPointMake(view.frame.size.width / 2.,view.frame.size.height / 2.);
     lh.layer.delegate = lh;
     lh.lineAngle = 0;
     lh.lineTrails =[NSMutableArray new];
@@ -31,7 +31,7 @@
     lh.lineSize = size;
     //add to superlayer
     [lh.layer setNeedsDisplay];
-    [layer addSublayer:(lh.layer)];
+    [view.layer addSublayer:lh.layer];
     return lh;
 }
 

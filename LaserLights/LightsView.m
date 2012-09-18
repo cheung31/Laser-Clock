@@ -1,7 +1,6 @@
 #import "LightsView.h"
 #import "LaserLine.h"
 #import "LaserHand.h"
-#import "ClockLayer.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface LightsView ()
@@ -26,9 +25,6 @@
     return self;
 }
 
-+ (Class)layerClass {
-    return [ClockLayer class];
-}
 
 - (void)makeClock {
 
@@ -38,26 +34,21 @@
         self.halfScreen = (self.bounds.size.width / 2);
     }
     //make seconds hand
-    self.secondsHand = [LaserHand createLaserHandInCenterOfLayer:self.layer
+    self.secondsHand = [LaserHand createLaserHandInCenterOfView:self
                                             WithPortionOfScreen:self.halfScreen * 0.55
                                                    WithLineSize:self.halfScreen/10
                                                     WithLineHue:0.7];
     //make minutes hand
-    self.minutesHand = [LaserHand createLaserHandInCenterOfLayer:self.layer
+    self.minutesHand = [LaserHand createLaserHandInCenterOfView:self
                                             WithPortionOfScreen:self.halfScreen * 0.85
                                                    WithLineSize:self.halfScreen/20
                                                     WithLineHue:0.6];
     //make hours hand
-    self.hoursHand = [LaserHand createLaserHandInCenterOfLayer:self.layer
+    self.hoursHand = [LaserHand createLaserHandInCenterOfView:self
                                           WithPortionOfScreen:self.halfScreen
                                                  WithLineSize:self.halfScreen/50
                                                   WithLineHue:0.5];
 }
-
-- (void)setClockCenter:(CGPoint) center {
-    self.layer.position = center;
-}
-
 
 - (void)updateTime {
     //get current time

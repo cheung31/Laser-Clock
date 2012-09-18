@@ -15,14 +15,12 @@
     return YES;
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {   
-    self.window.rootViewController.view = [[LightsView alloc] initWithFrame:self.window.bounds];
-    [((LightsView*)self.window.rootViewController.view) makeClock];
-    [((LightsView*)self.window.rootViewController.view) updateTime];
+- (void)applicationDidBecomeActive:(UIApplication *)application {    
+    self.window.rootViewController = [LightsViewController new];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    self.window.rootViewController.view = nil;
+    self.window.rootViewController = nil;
 }
 
 @end
