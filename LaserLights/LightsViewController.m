@@ -2,9 +2,13 @@
 #import "LightsViewController.h"
 #import "LightsView.h"
 #import "LaserHand.h"
+#import <QuartzCore/QuartzCore.h>
 
-@interface LightsViewController ()
+@interface LightsViewController () <UIGestureRecognizerDelegate>
+
 @property (weak, nonatomic) LightsView* lightsView;
+@property (strong, nonatomic) UITapGestureRecognizer* tapRec;
+@property BOOL rotation;
 @end
 
 @implementation LightsViewController
@@ -32,10 +36,32 @@
     [self.lightsView makeClock];
     [self.lightsView updateTime];
     [self.view addSubview:self.lightsView];
+    
+    self.rotation = NO;
+    
+    self.tapRec = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)];
+    [self.view addGestureRecognizer:self.tapRec];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)rotate {
+    CABasicAnimation* rotate = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotate.duration = 0.1;
+    rotate.repeatCount = INFINITY;
+    rotate.fromValue = [NSNumber numberWithFloat:0];
+    rotate.toValue = [NSNumber numberWithFloat:2 * M_PI];
+    [self.lightsView.layer addAnimation:rotate forKey:@"Zrotate"];
+    
+    [self.lightsView.layer addAnimation:rotate forKey:@"Zrotate"];
+}
 
+- (void)tap {
+    if (self.rotation) {
+        [self.lightsView.layer removeAnimationForKey:@"Zrotate"];
+        self.rotation = NO;
+    } else {
+        [self rotate];
+        self.rotation = YES;
+    }
 }
 
 - (void)viewDidUnload
@@ -56,7 +82,6 @@
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     self.lightsView.hidden = NO;
 
-    //self.lightsView.backgroundColor = [UIColor redColor];
     CGRect frame;
     frame.origin = CGPointMake(0, 0);
     frame.size = CGSizeMake(768, 768);
